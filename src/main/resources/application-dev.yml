@@ -1,0 +1,6 @@
+connection:
+    username: alex-dev
+    remote-address: localhost
+
+dev:
+    property: dev
