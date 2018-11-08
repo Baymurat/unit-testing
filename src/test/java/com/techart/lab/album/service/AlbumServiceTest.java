@@ -22,23 +22,16 @@ import java.util.List;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 /**
+ * Unit testing Service layer with Mockito and Hamcrest
  * @author vitali.pak
  */
 @RunWith(MockitoJUnitRunner.class)
 public class AlbumServiceTest {
-
-      /* This is another way to initialize mocks.
-        In case if you need to use another test runner (You can't use multiple test runners)
-
-        @Before
-        public void initMocks() {
-            MockitoAnnotations.initMocks(this);
-        }
-
-       */
 
     @InjectMocks
     private AlbumService albumService = new AlbumServiceImpl();

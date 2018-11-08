@@ -21,6 +21,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 /**
+ * Example of using Hamcrest matcher to check that result list contains certain elements.
  * @author vitali.pak
  */
 @RunWith(MockitoJUnitRunner.class)
@@ -40,6 +41,7 @@ public class SongServiceTest {
 
         ArgumentCaptor<Song> songCapture = ArgumentCaptor.forClass(Song.class);
         verify(songRepository, times(3)).save(songCapture.capture());
+
         assertThat(songCapture.getAllValues(),
                 hasItems(Song.builder().title("All I Need").duration(229L).build(),
                         Song.builder().title("Videotape").duration(280L).build(),

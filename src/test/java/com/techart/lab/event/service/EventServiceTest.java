@@ -28,7 +28,7 @@ public class EventServiceTest {
        /* This is another way to initialize mocks.
         In case if you need to use another test runner (You can't use multiple test runners)
 
-        @BeforeClass
+        @Before
         public void initMocks() {
             MockitoAnnotations.initMocks(this);
         }

@@ -9,6 +9,7 @@ import com.techart.lab.song.service.SongService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -40,5 +41,10 @@ public class AlbumServiceImpl implements AlbumService {
     @Override
     public void deleteById(Long id) {
         albumRepository.delete(id);
+    }
+
+    @Override
+    public List<AlbumDto> getAllAlbums() {
+        return ObjectMapper.mapAll(albumRepository.findAll(), AlbumDto.class);
     }
 }
